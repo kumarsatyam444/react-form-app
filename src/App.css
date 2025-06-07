@@ -1,38 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
 .App {
+  min-height: 100vh;
+}
+
+/* Global utility classes */
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mb-20 {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mt-20 {
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 198, 255, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 198, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Focus outline for accessibility */
+*:focus {
+  outline: 2px solid rgba(0, 198, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default button styles */
+button {
+  font-family: inherit;
+}
+
+/* Input autofill styling - Fixed for better visibility */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.9) inset !important;
+  -webkit-text-fill-color: #333333 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Additional input styling for better visibility */
+input, select, textarea {
+  color: #333333 !important;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Select dropdown styling */
+select option {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Ensure form elements have proper contrast */
+.form-group input,
+.form-group select {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #333333 !important;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #333333 !important;
+}
+
+/* Password toggle button styling */
+.password-toggle {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.password-toggle:hover {
+  color: #333333 !important;
+}
+
+/* Country code select styling */
+.country-code {
+  color: #333333 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
 }

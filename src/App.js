@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import UserForm from './components/UserForm';
+import UserDetails from './components/UserDetails';
 import './App.css';
 
 function App() {
+  const [currentView, setCurrentView] = useState('form'); // 'form' or 'details'
+  const [userData, setUserData] = useState(null);
+
+  const handleFormSubmit = (formData) => {
+    setUserData(formData);
+    setCurrentView('details');
+  };
+
+  const handleBackToForm = () => {
+    setCurrentView('form');
+    setUserData(null);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {currentView === 'form' ? (
+        <UserForm onFormSubmit={handleFormSubmit} />
+      ) : (
+        <UserDetails 
+          userData={userData} 
+          onBackToForm={handleBackToForm} 
+        />
+      )}
     </div>
   );
 }
